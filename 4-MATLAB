@@ -1,0 +1,29 @@
+d=input("Enter the Initial height")
+vo=input("Enter the magnitude of velocity")
+theta=input("Enter the angle(in degrees")
+ax=input("Enter the acceleration for x component")
+ay=input("Enter the acceleration for y component")
+if ax>0
+    vox=vo*cos((theta*pi)/180)
+    voy=vo*sin((theta*pi)/180)
+    t=ay*.5+voy;
+    for n=1:t
+        y(n)=voy*(n)+.5*ay*(n^2);
+        x(n)=vox*(n);
+    end
+    hold on
+    plot(x,y,'-b')
+    tt=2*voy/ay;
+
+    for m=1:tt
+    x1(m)=vox*(m)+.5*(ax)*(m^2);
+    y1(m)=voy*(m)+.5*(ay)*(m^2);
+    end
+    plot(x1,y1,'-r')
+    xlabel('range')
+    ylabel('height')
+    legend('ideal','real')
+    grid on
+elseif ax<0
+    error("No negative values of acceleration for x component")
+end
